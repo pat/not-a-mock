@@ -1,5 +1,4 @@
-$LOAD_PATH.unshift File.dirname(__FILE__) + '/../lib'
-require 'not_a_mock'
+require 'spec/spec_helper'
 
 class TrackedClass < Object
   def initialize(*calls)

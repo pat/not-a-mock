@@ -10,6 +10,7 @@ Spec::Rake::SpecTask.new do |t|
   t.spec_files = FileList['spec/**/*_spec.rb']
   t.spec_opts = ['--colour']
   t.rcov = true
+  t.rcov_opts = ["--exclude \"spec/*,gems/*\""]
 end
 
 desc "Generate documentation for the notamock plugin."

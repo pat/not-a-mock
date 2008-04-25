@@ -1,5 +1,4 @@
-$LOAD_PATH.unshift File.dirname(__FILE__) + '/../lib'
-require 'not_a_mock'
+require 'spec/spec_helper'
 
 describe "A stub instance" do
   
@@ -37,6 +36,13 @@ describe "A stub instance" do
     @object.is_a?(String).should be_true
     @object.should be_kind_of(String)
     @object.should be_kind_of(Object)
+    @object.should be_instance_of(String)
+    @object.class.should == String
+  end
+  
+  it "should identify itself as the underlying object" do
+    @object.is_a?(String).should be_true
+    @object.should be_kind_of(String)
     @object.should be_instance_of(String)
     @object.class.should == String
   end

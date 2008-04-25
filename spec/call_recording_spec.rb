@@ -1,5 +1,4 @@
-$LOAD_PATH.unshift File.dirname(__FILE__) + '/../lib'
-require 'not_a_mock'
+require 'spec/spec_helper'
 
 class TrackedClass
   def my_method(argument)
@@ -8,7 +7,6 @@ class TrackedClass
 end
 
 describe "A recorded method" do
-  
   before do
     @recorder = NotAMock::CallRecorder.instance
     @object = TrackedClass.new

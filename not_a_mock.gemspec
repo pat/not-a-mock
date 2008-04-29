@@ -27,5 +27,4 @@ Gem::Specification.new do |s|
   s.test_files = FileList["spec/**/*_spec.rb"]
   s.rdoc_options << "--title" << "Not A Mock" << "--line-numbers"
   s.extra_rdoc_files = ["README"]
-  s.add_dependency("mime-types", ["> 0.0.0"])
 end

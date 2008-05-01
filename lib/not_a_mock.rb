@@ -11,7 +11,9 @@ require 'not_a_mock/object_extensions'
 require 'not_a_mock/rspec_mock_framework_adapter'
 require 'not_a_mock/stubber'
 require 'not_a_mock/stub'
+
 require 'active_record'
+require 'spec'
 
 Object.send(:include, NotAMock::ObjectExtensions)
 

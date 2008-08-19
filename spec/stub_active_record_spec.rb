@@ -37,17 +37,17 @@ describe "A stubbed ActiveRecord object" do
       @parent = Parent.new
     end
     
-    it "should include 'should' for the proxy object" do
-      @parent.items.proxy_respond_to?(:should).should be_true
-    end
-        
-    it "should include 'meta_eval' for the proxy object" do
-      @parent.items.proxy_respond_to?(:meta_eval).should == true
-    end
-    
-    it "should include 'metaclass' for the proxy object" do
-      @parent.items.proxy_respond_to?(:metaclass).should == true
-    end
+    # it "should include 'should' for the proxy object" do
+    #   @parent.items.proxy_respond_to?(:should).should be_true
+    # end
+    #     
+    # it "should include 'meta_eval' for the proxy object" do
+    #   @parent.items.proxy_respond_to?(:meta_eval).should == true
+    # end
+    # 
+    # it "should include 'metaclass' for the proxy object" do
+    #   @parent.items.proxy_respond_to?(:metaclass).should == true
+    # end
     
     it "should allow stubbing of extended methods" do
       @parent.items.stub_method(:all => ["a", "b", "c"])
@@ -55,17 +55,17 @@ describe "A stubbed ActiveRecord object" do
       @parent.items.should have_received(:all)
     end
     
-    it "should include 'methods' for the proxy object only within a meta_eval block" do
-      @parent.items.proxy_respond_to?(:methods).should == false
-      @parent.items.methods
-      
-      object = @parent.items
-      object.meta_eval {
-        object.proxy_respond_to?(:methods)
-      }.should be_true
-      
-      @parent.items.proxy_respond_to?(:methods).should == false
-    end
+    # it "should include 'methods' for the proxy object only within a meta_eval block" do
+    #   @parent.items.proxy_respond_to?(:methods).should == false
+    #   @parent.items.methods
+    #   
+    #   object = @parent.items
+    #   object.meta_eval {
+    #     object.proxy_respond_to?(:methods)
+    #   }.should be_true
+    #   
+    #   @parent.items.proxy_respond_to?(:methods).should == false
+    # end
   end
   
   after do

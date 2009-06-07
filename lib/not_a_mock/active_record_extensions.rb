@@ -1,6 +1,6 @@
-module ActiveRecord # :nodoc:
-  class Base    
-    def self.stub_instance(methods = {})
+module NotAMock
+  module ActiveRecord # :nodoc:
+    def stub_instance(methods = {})
       @@__stub_object_id ||= 1000
       @@__stub_object_id += 1
       methods = methods.merge(

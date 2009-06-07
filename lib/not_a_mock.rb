@@ -16,6 +16,7 @@ require 'active_record'
 require 'spec'
 
 Object.send(:include, NotAMock::ObjectExtensions)
+ActiveRecord::Base.extend NotAMock::ActiveRecord
 
 module NotAMock
   module Version #:nodoc:

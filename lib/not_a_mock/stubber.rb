@@ -61,9 +61,9 @@ module NotAMock
     end
     
     def method_at_any_level?(object, method)
-      object.methods.include?(method) ||
-      object.protected_methods.include?(method) ||
-      object.private_methods.include?(method)
+      object.respond_to?(method.to_sym)                 ||
+      object.protected_methods.include?(method.to_sym)  ||
+      object.private_methods.include?(method.to_sym)
     end
   end
 end
